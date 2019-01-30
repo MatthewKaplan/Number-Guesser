@@ -10,12 +10,10 @@ body{
 
 p{
   color: #6e6e6e;
-  margin-left: 10px;
 }
 
 h3{
   color: #6E6E6E;
-  margin-left: 10px;
 }
 
 content{
@@ -115,6 +113,7 @@ button{
   color:#ffffff;
   margin-left: 10px;
 }
+
 button:active{
   background-color: #6E6E6E;
 }
