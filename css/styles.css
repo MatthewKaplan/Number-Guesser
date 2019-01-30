@@ -1,12 +1,186 @@
-.input-column {
-  border: 3px solid black;
+/*---------Body-----------------*/
+body{
+  font-family: 'Open Sans', sans-serif;
+}
+
+.underlined{
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+p{
+  color: #6e6e6e;
+  margin-left: 10px;
+}
+
+h3{
+  color: #6E6E6E;
+  margin-left: 10px;
+}
+
+content{
+  display: flex;
+}
+/*---------Header---------------*/
+h1{
+  color: #DD1972;
+  margin-top: 0px;
+  padding-top: 20px;
+  margin-left: 10px;
+  }
+
+header{
+  background-color: #404041;
+  text-align: center;
+}
+
+.header-span{
+  font-weight: normal;
+}
+
+p.subtitle{
+  margin-bottom: 0;
+}
+
+.main-flex {
+  display: flex;
+}
+
+/*---------Input Column----------*/
+
+main {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  width: 50%;
+  background-color: #f7f7f7;
+}
+
+.left-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 100%;
+  height: 100%;
 }
 
 .set-range {
-  border: 1px solid red;
+  display: flex;
+  flex-direction: column;
 }
 
-.challengers {
-  border: 1px solid blue;
+.range-flex {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
 }
 
+.challenger-input {
+  display: flex;
+  justify-content: space-around;
+}
+
+.score-section {
+  display: flex;
+  justify-content: space-around;
+}
+
+.challenger1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.challenger2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.set-range,
+.user-guess,
+.challenger-scores {
+  background-color: white;
+  border: 2px solid #DBDBDB;
+  margin: 5px 20px;
+  width: 92%;
+  padding: 10px;
+}
+
+button{
+  border-radius: 50px;
+  background-color: #6E6E6E;
+  color:#ffffff;
+  margin-left: 10px;
+}
+button:active{
+  background-color: #6E6E6E;
+}
+
+button:disabled{
+  background-color: #D0D2D3
+}
+
+button:hover{
+  background-color: #DD1972;
+}
+
+
+/*---------Right Column---------*/
+
+aside {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  width: 50%;
+}
+
+.right-column {
+  background-color: #D0D2D3;
+  border-left: 2px solid #abacad;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+  text-align: center;
+  width: 100%;
+}
+
+.card-results {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border: 2px solid #abacad;
+  margin: 5px;
+  width: 90%;
+}
+
+.card-header {
+  display: flex;
+  justify-content: center;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+hr {
+  border: .5px solid #D0D2D3;
+  text-align: center;
+  width: 95%;
+}
+
+.card-footer {
+  display: flex;
+}
+
+.footer-flex {
+  display: flex;
+}
+
+/*--------Media Queries---------*/
