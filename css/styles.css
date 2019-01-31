@@ -1,6 +1,7 @@
 /*---------Body-----------------*/
 body{
   font-family: 'Open Sans', sans-serif;
+  height:100%;
 }
 
 .underlined{
@@ -11,6 +12,7 @@ body{
 p{
   color: #6e6e6e;
   margin-bottom: 0;
+  margin-top: 0;
 }
 
 h3{
@@ -30,6 +32,7 @@ h1{
   margin-top: 0px;
   padding-top: 20px;
   margin-left: 10px;
+  font-size: 48px;
   }
 
 header{
@@ -55,15 +58,18 @@ p.subtitle{
 .challenger1-name{
   font-weight: bold;
 }
+
 .challenger2-name{
   font-weight: bold;
 }
+
 /*input#challenger-name1{
   flex-grow: 2;
 }
 input#challenger-guess1{
   flex-grow: 1;
 }*/
+
 main {
   align-items: center;
   display: flex;
@@ -71,21 +77,29 @@ main {
   width: 50%;
   background-color: #f7f7f7;
 }
+
 input{
   margin-right: 10px;
 }
+
 input:focus{
   outline: none;
   border-color: #DD1972;
   padding: 2px;
 }
+
 textarea:focus{
   border-color: #DD1972;
   padding: 2px;
 }
+.verticalLine {
+  border-left: thick solid;
+  border-color: #D0D2D3;
+}
 /*input:hover{
   border:4px solid:#DD1972;
 }*/
+
 .left-column {
   display: flex;
   flex-direction: column;
@@ -117,6 +131,7 @@ textarea:focus{
 .score-section {
   display: flex;
   justify-content: space-around;
+  margin-top: 10px;
 }
 
 .challenger1 {
@@ -150,6 +165,7 @@ button{
   margin-left: 10px;
   height: 30px;
   font-weight: bold;
+  display: flex;
 }
 
 button:active{
@@ -167,7 +183,7 @@ button:hover{
 .src-buttons{
   display: flex;
   justify-content: space-evenly;
-  margin-top: 10px;
+  margin-top: 15px;
 }
 
 .current-guess{
@@ -212,18 +228,18 @@ p#winner-name{
 }
 
 .card-results {
-  display: flex;
-  flex-direction: column;
   background-color: white;
   border: 2px solid #abacad;
-  margin: 5px;
-  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
   width: 90%;
 }
 
 .card-header {
   display: flex;
   justify-content: space-evenly;
+  margin-top: 10px;
 }
 
 .winner{
@@ -244,8 +260,9 @@ hr {
 }
 
 .card-footer {
-  justify-content: space-evenly;
   display: flex;
+  justify-content: space-between;
+  margin: 15px;
 }
 
 .footer-flex {
