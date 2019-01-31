@@ -26,11 +26,11 @@
           <article class="range-flex">
             <div class="user-input">
               <p>Min Range</p>
-              <input type="number" name="user_range" class="min_range">
+              <input type="number" name="user_range" class="min-range">
             </div>
             <div class="user-input">
               <p>Max Range</p>
-              <input type="number" name="user_range" class="max_range">
+              <input type="number" name="user_range" class="max-range">
             </div>
             <button class="update-button">UPDATE</button>
           </article>
@@ -38,7 +38,7 @@
 
         <section class="user-guess">
           <p>
-            The Current Range is <span class="underlined">1</span> to <span class="underlined">100</span>
+            The Current Range is <span class="underlined" id="min-number">1</span> to <span class="underlined" id="max-number">100</span>
           </p>
           <div class="challengers">
             <h3>Challenger 1</h3>
@@ -77,16 +77,16 @@
           <h3>Latest Score</h3>
           <div class="score-section">
             <article class="challenger1">
-              <p>Challenger 1 Name</p>
+              <p class="challenger1-name">Challenger 1 Name</p>
               <p class="curret-guess">current guess</p>
-              <p class="guess-placeholder">97</p>
-              <p class="feedback-message">that's too high</p>
+              <p class="guess-placeholder1">#</p>
+              <p class="feedback-message1">" "</p>
             </article>
             <article class="challenger2">
-              <p>Challenger 2 Name</p>
+              <p class="challenger2-name">Challenger 2 Name</p>
               <p class="current-guess">current guess</p>
-              <p class="guess-placeholder">3</p>
-              <p class="feedback-message">that's too low</p>
+              <p class="guess-placeholder2">#</p>
+              <p class="feedback-message2">" "</p>
             </article>
           </div>
         </section> 
@@ -125,4 +125,5 @@
     </aside>
   </div>
 </body>
+<script type="text/javascript" src="script.js"></script>
 </html>
