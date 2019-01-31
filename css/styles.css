@@ -10,14 +10,19 @@ body{
 
 p{
   color: #6e6e6e;
+  margin-bottom: 0;
 }
 
 h3{
   color: #6E6E6E;
+  margin-bottom: 0px;
 }
 
 content{
   display: flex;
+}
+.bold{
+  font-weight: bold;
 }
 /*---------Header---------------*/
 h1{
@@ -30,6 +35,7 @@ h1{
 header{
   background-color: #404041;
   text-align: center;
+  padding-bottom: 30px;
 }
 
 .header-span{
@@ -38,6 +44,7 @@ header{
 
 p.subtitle{
   margin-bottom: 0;
+  color: #ffffff;
 }
 
 .main-flex {
@@ -45,7 +52,18 @@ p.subtitle{
 }
 
 /*---------Input Column----------*/
-
+.challenger1-name{
+  font-weight: bold;
+}
+.challenger2-name{
+  font-weight: bold;
+}
+/*input#challenger-name1{
+  flex-grow: 2;
+}
+input#challenger-guess1{
+  flex-grow: 1;
+}*/
 main {
   align-items: center;
   display: flex;
@@ -53,7 +71,21 @@ main {
   width: 50%;
   background-color: #f7f7f7;
 }
-
+input{
+  margin-right: 10px;
+}
+input:focus{
+  outline: none;
+  border-color: #DD1972;
+  padding: 2px;
+}
+textarea:focus{
+  border-color: #DD1972;
+  padding: 2px;
+}
+/*input:hover{
+  border:4px solid:#DD1972;
+}*/
 .left-column {
   display: flex;
   flex-direction: column;
@@ -62,9 +94,13 @@ main {
   height: 100%;
 }
 
-.set-range {
+#update-button{
+  justify-content: center;
+}
+
+.input-boxes {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
 }
 
 .range-flex {
@@ -75,7 +111,7 @@ main {
 
 .challenger-input {
   display: flex;
-  justify-content: space-around;
+  flex-direction: row;
 }
 
 .score-section {
@@ -102,7 +138,7 @@ main {
 .challenger-scores {
   background-color: white;
   border: 2px solid #DBDBDB;
-  margin: 5px 20px;
+  margin: 15px 20px;
   width: 92%;
   padding: 10px;
 }
@@ -112,6 +148,8 @@ button{
   background-color: #6E6E6E;
   color:#ffffff;
   margin-left: 10px;
+  height: 30px;
+  font-weight: bold;
 }
 
 button:active{
@@ -126,7 +164,26 @@ button:hover{
   background-color: #DD1972;
 }
 
+.src-buttons{
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 10px;
+}
 
+.current-guess{
+  color: #DD1972;
+  font-size: 48pt;
+  font-weight: bold;
+  margin:0;
+}
+
+p#ch1-feedback-message{
+  font-size: 20px;
+}
+
+p#ch2-feedback-message{
+  font-size: 20px;
+}
 /*---------Right Column---------*/
 
 aside {
@@ -134,6 +191,12 @@ aside {
   display: flex;
   justify-content: center;
   width: 50%;
+}
+
+p#winner-name{
+  font-size: 30px;
+  font-weight: bold;
+  text-transform: uppercase;
 }
 
 .right-column {
@@ -154,17 +217,23 @@ aside {
   background-color: white;
   border: 2px solid #abacad;
   margin: 5px;
+  margin-top: 15px;
   width: 90%;
 }
 
 .card-header {
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
+}
+
+.winner{
+  font-size: 30px;
+  margin-top: 5px;
 }
 
 .card-body {
-  display: flex;
-  flex-direction: column;
+/*  display: flex;*/
+/*  flex-direction: column;*/
   justify-content: center;
 }
 
@@ -175,6 +244,7 @@ hr {
 }
 
 .card-footer {
+  justify-content: space-evenly;
   display: flex;
 }
 

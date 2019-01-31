@@ -7,6 +7,7 @@
   <link rel="stylesheet" type="text/css" href="css/normalize.css">
   <link rel="stylesheet" type="text/css" href="css/styles.css">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
 </head>
 
 <body>
@@ -23,33 +24,33 @@
 
         <section class="set-range">
           <h3>Set Range</h3>
-          <article class="range-flex">
+          <article class="input-boxes">
             <div class="user-input">
               <p>Min Range</p>
-              <input type="number" name="user_range" class="min_range">
+              <input type="number" name="user_range" id="min-range-set" class="left-column-input">
             </div>
             <div class="user-input">
               <p>Max Range</p>
-              <input type="number" name="user_range" class="max_range">
+              <input type="number" name="user_range" id="max-range-set" class="left-column-input">
             </div>
-            <button class="update-button">UPDATE</button>
+            <button id="update-button" class="src-buttons">UPDATE</button>
           </article>
         </section>
 
         <section class="user-guess">
           <p>
-            The Current Range is <span class="underlined">1</span> to <span class="underlined">100</span>
+            The Current Range is <span class="underlined" id="min-number">1</span> to <span class="underlined" id="max-number">100</span>
           </p>
           <div class="challengers">
             <h3>Challenger 1</h3>
             <article class="challenger-input">
               <div class="challenger-name">
                 <p>Name</p>
-                <input type="username" name="user_name" class="challenger-name1">
+                <input type="username" name="user_name" id="challenger-name1">
               </div>
               <div class="user-input">
                 <p>Guess</p>
-                <input type="number" name="user_guess" class="challenger-guess1">
+                <input type="number" name="user_guess" id="challenger-guess1">
               </div>
             </article>
 
@@ -57,36 +58,36 @@
             <article class="challenger-input">
               <div class="challenger-name">
                 <p>Name</p>
-                <input type="username" name="user_name" class="challenger-name2">
+                <input type="username" name="user_name" id="challenger-name2">
               </div>
               <div class="user-input">
                 <p>Guess</p>
-                <input type="number" name="user_guess" class="challenger-guess2">
+                <input type="number" name="user_guess" id="challenger-guess2">
               </div>
             </article>
 
-            <article class="buttons">
-              <button class="submit-button">Submit Guess</button>
-              <button class="reset-button">Reset Game</button>
-              <button class="clear-button">Clear Guess</button>
+            <article class="src-buttons">
+              <button id="submit-button">SUBMIT GUESS</button>
+              <button id="reset-button">RESET GAME</button>
+              <button id="clear-button">CLEAR GUESS</button>
             </article>
           </div>
         </section>
 
         <section class="challenger-scores">
-          <h3>Latest Score</h3>
+          <h3 class="bold">Latest Score</h3>
           <div class="score-section">
-            <article class="challenger1">
-              <p>Challenger 1 Name</p>
-              <p class="curret-guess">current guess</p>
-              <p class="guess-placeholder">97</p>
-              <p class="feedback-message">that's too high</p>
+            <article class ="challenger1">
+              <p class="challenger1-name">Challenger 1 Name</p>
+              <p>current guess</p>
+              <p id="ch1-guess" class="current-guess">97</p>
+              <p id="ch1-feedback-message">that's too high</p>
             </article>
             <article class="challenger2">
-              <p>Challenger 2 Name</p>
-              <p class="current-guess">current guess</p>
-              <p class="guess-placeholder">3</p>
-              <p class="feedback-message">that's too low</p>
+              <p class="challenger2-name">Challenger 2 Name</p>
+              <p>current guess</p>
+              <p class="current-guess" id="ch2-guess">3</p>
+              <p id="ch2-feedback-message">that's too low</p>
             </article>
           </div>
         </section> 
@@ -98,23 +99,24 @@
         <section class="card-results">
           <article class="card-header">
             <p class="challenger1-name">Challenger 1 Name</p>
-            <p>vs</p>
+            <p> vs </p>
             <p class="challenger2-name">Challenger 2 Name</p>
           </article>
           <hr>
           <article class="card-body">
-            <p class="winner-name">Challenger 1 Name</p>
-            <p>WINNER</p>
+            <p id="winner-name">Challenger 1 Name</p>
+            <p class="winner">WINNER</p>
           </article>
           <hr>
           <article class="card-footer">
             <div class="footer-flex">
-              <p>47</p>
+              <p class="bold">47 </p>
               <p>guesses</p>
             </div>
             <div class="footer-flex">
-              <p>1.35</p>
+              <p class="bold">1.35 </p>
               <p>minutes</p>
+              <i class="fas fa-times-circle"></i>
             </div>
           </article>
           
