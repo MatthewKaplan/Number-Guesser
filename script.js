@@ -20,6 +20,8 @@ guessSubmitButton.addEventListener('click', playGame);
 
 // Function that calls Feedback functions when submit button is hit 
 function playGame () {
+  emptyGuessInputs();
+  emptyNameInputs();
   feedback1();
   feedback2();
   challengersGuesses();
@@ -29,10 +31,18 @@ function playGame () {
 // Testing Random number generater in the console
 console.log(generatedRandomNumber);
 
-// Update the current range that the user enters
+// Update the current range that the user enters and randomly generates a number between that range
 updateButton.addEventListener('click', function() {
+  minRangeSet = parseInt(minRangeSet.value);
+  maxRangeSet = parseInt(maxRangeSet.value);
+  if (minRangeSet >= maxRangeSet) {
+    alert('Please make max range number larger then min range number');
+  } else{ 
   minNumber.innerText = minRangeSet.value;
   maxNumber.innerText = maxRangeSet.value;
+  }
+  var generatedRandomNumber = randomNumber(minRangeSet,maxRangeSet);
+  console.log(generatedRandomNumber);
 });
 
 function challengersGuesses() {
@@ -80,4 +90,16 @@ function challengerNames() {
   for ( var i = 0; i < challenger2Name.length; i++) {
   challenger2Name[i].innerText = challengerName2.value;
 };
+}
+
+function emptyGuessInputs() {
+  if (challenger1guess.value === '' && challenger2guess.value === '') {
+    alert('Please enter a guess')
+  }
+}
+
+function emptyNameInputs() {
+  if (challengerName1.value === '' && challengerName2.value === '') {
+    alert('please enter a name')
+  }
 }
