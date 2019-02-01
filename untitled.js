@@ -1,4 +1,4 @@
-var challenger1guess = document.querySelector('#challenger-guess1');
+`var challenger1guess = document.querySelector('#challenger-guess1');
 var challenger2guess = document.querySelector('#challenger-guess2');
 var guessPlaceholder1 = document.querySelector('#ch1-guess');
 var guessPlaceholder2 = document.querySelector('#ch2-guess');
@@ -14,16 +14,9 @@ var feedbackMessage1 = document.querySelector('#ch1-feedback-message');
 var feedbackMessage2 = document.querySelector('#ch2-feedback-message');
 var updateButton = document.querySelector('#update-button');
 var guessSubmitButton = document.querySelector('#submit-button');
-var resetButton = document.querySelector('#resetButton');
 var generatedRandomNumber = randomNumber(1,100);
 
 guessSubmitButton.addEventListener('click', playGame);
-
-resetButton.addEventListener('click', resetGame);
-
-function resetGame (){
-  location.reload();
-}
 
 // Function that calls Feedback functions when submit button is hit 
 function playGame () {
@@ -37,7 +30,7 @@ function playGame () {
 console.log(generatedRandomNumber);
 
 // Update the current range that the user enters
-updateButton.addEventListener('onClick', function() {
+updateButton.addEventListener('click', function() {
   minNumber.innerText = minRangeSet.value;
   maxNumber.innerText = maxRangeSet.value;
 });

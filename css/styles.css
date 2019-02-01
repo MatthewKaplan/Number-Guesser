@@ -85,7 +85,7 @@ input{
 input:focus{
   outline: none;
   border-color: #DD1972;
-  padding: 2px;
+  padding: 4px;
 }
 
 textarea:focus{
