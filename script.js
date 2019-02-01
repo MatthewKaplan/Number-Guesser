@@ -14,10 +14,12 @@ var feedbackMessage1 = document.querySelector('#ch1-feedback-message');
 var feedbackMessage2 = document.querySelector('#ch2-feedback-message');
 var updateButton = document.querySelector('#update-button');
 var guessSubmitButton = document.querySelector('#submit-button');
+var clearGuessButton = document.querySelector('#clear-button')
 var generatedRandomNumber = randomNumber(1,100);
 
 guessSubmitButton.addEventListener('click', playGame);
 
+clearGuessButton.addEventListener('click', clearGuess);
 // Function that calls Feedback functions when submit button is hit 
 function playGame () {
   emptyNameInputs(); 
@@ -38,8 +40,8 @@ updateButton.addEventListener('click', function() {
   if (minRangeSet >= maxRangeSet) {
     alert('Please make max range number larger then min range number');
   } else{ 
-  minNumber.innerText = minRangeSet.value;
-  maxNumber.innerText = maxRangeSet.value;
+  minNumber.innerText = minRangeSet;
+  maxNumber.innerText = maxRangeSet;
   }
   var generatedRandomNumber = randomNumber(minRangeSet,maxRangeSet);
   console.log(generatedRandomNumber);
@@ -102,4 +104,9 @@ function emptyNameInputs() {
   if (challengerName1.value === '' || challengerName2.value === '') {
     alert('please enter a name')
   }
+}
+
+function clearGuess(){
+  challenger1guess.value = "";
+  challenger2guess.value = "";
 }
