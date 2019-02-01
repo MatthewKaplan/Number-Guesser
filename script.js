@@ -20,8 +20,8 @@ guessSubmitButton.addEventListener('click', playGame);
 
 // Function that calls Feedback functions when submit button is hit 
 function playGame () {
+  emptyNameInputs(); 
   emptyGuessInputs();
-  emptyNameInputs();
   feedback1();
   feedback2();
   challengersGuesses();
@@ -93,13 +93,13 @@ function challengerNames() {
 }
 
 function emptyGuessInputs() {
-  if (challenger1guess.value === '' && challenger2guess.value === '') {
+  if (challenger1guess.value === '' || challenger2guess.value === '') {
     alert('Please enter a guess')
   }
 }
 
 function emptyNameInputs() {
-  if (challengerName1.value === '' && challengerName2.value === '') {
+  if (challengerName1.value === '' || challengerName2.value === '') {
     alert('please enter a name')
   }
 }
