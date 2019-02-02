@@ -2,10 +2,12 @@ var challenger1guess = document.querySelector('#challenger-guess1');
 var challenger2guess = document.querySelector('#challenger-guess2');
 var guessPlaceholder1 = document.querySelector('#ch1-guess');
 var guessPlaceholder2 = document.querySelector('#ch2-guess');
+
 var minRangeSet = document.querySelector('#min-range-set');
 var maxRangeSet = document.querySelector('#max-range-set');
 var minNumber = document.querySelector('#min-number');
 var maxNumber = document.querySelector('#max-number');
+
 var challengerName1 = document.querySelector('#challenger-name1');
 var challengerName2 = document.querySelector('#challenger-name2');
 var challenger1Name = document.querySelectorAll('.challenger1-name');
@@ -20,6 +22,7 @@ var generatedRandomNumber = randomNumber(1,100);
 
 guessSubmitButton.addEventListener('click', playGame);
 clearGameButton.addEventListener('click', clearGame);
+updateButton.addEventListener('click', updateRange);
 resetButton.addEventListener('click', newGame);
 
 // Function that calls Feedback functions when submit button is hit 
@@ -36,7 +39,7 @@ function playGame () {
 console.log(generatedRandomNumber);
 
 // Update the current range that the user enters and randomly generates a number between that range
-updateButton.addEventListener('click', function() {
+function updateRange() {
   minRangeSet = parseInt(minRangeSet.value);
   maxRangeSet = parseInt(maxRangeSet.value);
   if (minRangeSet >= maxRangeSet) {
@@ -47,11 +50,20 @@ updateButton.addEventListener('click', function() {
   }
   var generatedRandomNumber = randomNumber(minRangeSet,maxRangeSet);
   console.log(generatedRandomNumber);
-});
+};
 
 function challengersGuesses() {
-  guessPlaceholder1.innerText = challenger1guess.value;
-  guessPlaceholder2.innerText = challenger2guess.value;
+  if (challenger1guess.value === '') {
+    guessPlaceholder1.innerText = '97'
+  } else {
+    guessPlaceholder1.innerText = challenger1guess.value;
+  }
+
+  if (challenger2guess.value === '') {
+    guessPlaceholder2.innerText = '3'
+  } else {
+    guessPlaceholder2.innerText = challenger2guess.value;
+  }
 }
 
 // Makes sure min and max are numerical values then creates a 
@@ -68,9 +80,11 @@ function feedback1() {
     feedbackMessage1.innerText = 'That\'s too low'
   } else if (givenNumber > generatedRandomNumber) {
     feedbackMessage1.innerText = 'That\'s too high'
-  } else {
+  } else if (givenNumber === generatedRandomNumber) {
     feedbackMessage1.innerText = 'BOOM!'
-  };
+  } else {
+    feedbackMessage1.innerText = 'That\'s too high'
+  }
 }
 
 // Feedback message for challenger 2
@@ -80,19 +94,29 @@ function feedback2() {
     feedbackMessage2.innerText = 'That\'s too low'
   } else if (givenNumber > generatedRandomNumber) {
     feedbackMessage2.innerText = 'That\'s too high'
-  } else {
+  } else if (givenNumber === generatedRandomNumber) {
     feedbackMessage2.innerText = 'BOOM!'
-  };
+  } else {
+    feedbackMessage2.innerText = 'That\'s too low'
+  }
 }
 
 // Changes name placeholders to user inputs 
 function challengerNames() {
   for ( var i = 0; i < challenger1Name.length; i++) {
-  challenger1Name[i].innerText = challengerName1.value;
+    if (challengerName1.value === '') {
+      challenger1Name[i].innerText = 'Challenger 1 Name'
+    } else {
+      challenger1Name[i].innerText = challengerName1.value;
+    }
 };
 
-  for ( var i = 0; i < challenger2Name.length; i++) {
-  challenger2Name[i].innerText = challengerName2.value;
+  for ( var i = 0; i < challenger2Name.length; i++) { 
+    if(challengerName2.value === '') {
+      challenger2Name[i].innerText = 'Challenger 2 Name'
+    } else {
+      challenger2Name[i].innerText = challengerName2.value;
+    }
 };
 }
 
@@ -113,10 +137,19 @@ function clearGame(){
   challenger2guess.value = '';
   challengerName1.value = '';
   challengerName2.value = '';
+  minRangeSet.value = '';
+  maxRangeSet.value = '';
 }
 
 // Sets game to initial state
 function newGame(){
   clearGame();
-  randomNumber(1,100);
-}
+  challengerNames();
+  challengersGuesses();
+  feedback1();
+  feedback2();
+  var generatedRandomNumber = randomNumber(1,100);
+  console.log(generatedRandomNumber);
+  minNumber.innerText = '1';
+  maxNumber.innerText = '100';
+};
