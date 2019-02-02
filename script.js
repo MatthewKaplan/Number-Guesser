@@ -14,12 +14,14 @@ var feedbackMessage1 = document.querySelector('#ch1-feedback-message');
 var feedbackMessage2 = document.querySelector('#ch2-feedback-message');
 var updateButton = document.querySelector('#update-button');
 var guessSubmitButton = document.querySelector('#submit-button');
-var clearGuessButton = document.querySelector('#clear-button')
+var clearGameButton = document.querySelector('#clear-button');
+var resetButton = document.querySelector('#reset-button');
 var generatedRandomNumber = randomNumber(1,100);
 
 guessSubmitButton.addEventListener('click', playGame);
+clearGameButton.addEventListener('click', clearGame);
+resetButton.addEventListener('click', newGame);
 
-clearGuessButton.addEventListener('click', clearGuess);
 // Function that calls Feedback functions when submit button is hit 
 function playGame () {
   emptyNameInputs(); 
@@ -106,7 +108,15 @@ function emptyNameInputs() {
   }
 }
 
-function clearGuess(){
-  challenger1guess.value = "";
-  challenger2guess.value = "";
+function clearGame(){
+  challenger1guess.value = '';
+  challenger2guess.value = '';
+  challengerName1.value = '';
+  challengerName2.value = '';
+}
+
+// Sets game to initial state
+function newGame(){
+  clearGame();
+  randomNumber(1,100);
 }
