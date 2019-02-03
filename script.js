@@ -165,16 +165,7 @@ function newGame(){
 //   var numerical = 0-9;
 //   if ( minRangeSet())
 //     {
-// alert('Your registration number have accepted : you can try another');
-// document.form1.text1.focus();
-// return true;
-// }
-// else
-// {
-// alert('Please input alphanumeric characters only');
-// return false;
-// }
-// } 
+
 //Sets the winner name in the right column if they guess the exact number
 function updateWinnerName(){
   console.log ('guesses',typeof(challenger1guess.value),parseInt(challenger1guess.value),parseInt(challenger2guess.value),generatedRandomNumber);
