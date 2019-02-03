@@ -33,9 +33,9 @@ resetButton.addEventListener('click', newGame);
 function playGame () {
   emptyNameInputs(); 
   emptyGuessInputs();
+  challengersGuesses();
   feedback1();
   feedback2();
-  challengersGuesses();
   challengerNames();
   updateWinnerName();
 }
@@ -46,27 +46,30 @@ console.log(generatedRandomNumber);
 // Update the current range that the user enters and randomly generates a number between that range
 function updateRange() {
 
-  minRangeSet = parseInt(minRangeSet.value);
-  maxRangeSet = parseInt(maxRangeSet.value);
-
-  if ( minRangeSet.length <= 0 || maxRangeSet.length <= 0 ) {
+  var minRange = parseInt(minRangeSet.value);
+  var maxRange = parseInt(maxRangeSet.value);
+  if ( minRangeSet.value === '' || maxRangeSet.value === '' ) {
     alert('Please enter a minimum and maximum range');
-  } else if (minRangeSet >= maxRangeSet) {
+    return;
+  } else if (minRange >= maxRange) {
     alert('Please make max range number larger then min range number');
   } else {
-    minNumber.innerText = minRangeSet;
-    maxNumber.innerText = maxRangeSet;
+    minNumber.innerText = minRange;
+    maxNumber.innerText = maxRange;
   }
-
-  var generatedRandomNumber = randomNumber(minRangeSet,maxRangeSet);
+  generatedRandomNumber = randomNumber(minRange,maxRange);
   console.log(generatedRandomNumber);
-  clearGame();
 };
 
+
 function challengersGuesses() {
+
+  minNumber = parseInt(minNumber.innerText);
+  maxNumber = parseInt(maxNumber.innerText);
+
   if (challenger1guess.value === '') {
     guessPlaceholder1.innerText = '97'
-  } else if (challenger1guess.value < minRangeSet || challenger1guess.value > maxRangeSet) {
+  } else if (challenger1guess.value < minNumber || challenger1guess.value > maxNumber) {
     alert('Nope that is outside of the range')
   } else {
     guessPlaceholder1.innerText = challenger1guess.value;
@@ -74,7 +77,7 @@ function challengersGuesses() {
 
   if (challenger2guess.value === '') {
     guessPlaceholder2.innerText = '3'
-    } else if (challenger2guess.value < minRangeSet || challenger2guess.value > maxRangeSet) {
+    } else if (challenger2guess.value < minNumber || challenger2guess.value > maxNumber) {
       alert('Nope that is outside of the range')
     } else {
     guessPlaceholder2.innerText = challenger2guess.value;
@@ -177,7 +180,7 @@ function newGame(){
 
 //Sets the winner name in the right column if they guess the exact number
 function updateWinnerName(){
-  console.log ('guesses',typeof(challenger1guess.value),parseInt(challenger1guess.value),parseInt(challenger2guess.value),generatedRandomNumber);
+  // console.log ('guesses',typeof(challenger1guess.value),parseInt(challenger1guess.value),parseInt(challenger2guess.value),generatedRandomNumber);
   if (parseInt(challenger1guess.value) === generatedRandomNumber){
    return winnerName.innerText = challengerName1.value;
   }else if (parseInt(challenger2guess.value) === generatedRandomNumber) {
@@ -186,3 +189,13 @@ function updateWinnerName(){
     return winnerName.innerText = 'Challenger Name';
   }
 }
+
+
+
+
+
+
+
+
+
+

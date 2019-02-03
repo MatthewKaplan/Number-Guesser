@@ -36,19 +36,39 @@ h1{
   padding-top: 20px;
   }
 
+.header-span {
+  font-weight: lighter;
+}
+
 header{
   background-color: #404041;
   padding-bottom: 30px;
   text-align: center;
 }
 
-.header-span{
-  font-weight: normal;
+#subtitle::before {
+  content:'';
+  border-bottom: 1px lightgrey solid;
+  width:100px;
+  height: 15px;
+  margin-right: 10px;
 }
 
-p.subtitle{
-  color: #ffffff;
+#subtitle {
+  display: flex;
+  justify-content: center;
+  font-size: 24px;
+  color: #fff;
+  font-weight: 400;
   margin-bottom: 0;
+}
+
+#subtitle::after {
+  content:'';
+  border-bottom: 1px lightgrey solid;
+  width:100px;
+  height: 15px;
+  margin-left: 10px;
 }
 
 .main-flex {
@@ -65,13 +85,6 @@ p.subtitle{
   font-weight: bold;
 /*  text-transform: capitalize;*/
 }
-
-/*input#challenger-name1{
-  flex-grow: 2;
-}
-input#challenger-guess1{
-  flex-grow: 1;
-}*/
 
 main {
   align-items: center;
@@ -121,7 +134,16 @@ textarea:focus{
 
 .challenger-input {
   display: flex;
-  flex-direction: row;
+  justify-content: space-between;
+}
+
+input#challenger-name1,
+input#challenger-name2{
+  width: 340px;
+}
+input#challenger-guess1,
+input#challenger-guess2{
+  width: 150px;
 }
 
 #challenger1-latest-guess,
@@ -269,7 +291,7 @@ p#winner-name{
 }
 
 hr {
-  border: .5px solid #D0D2D3;
+  border-top: .5px solid #D0D2D3;
   text-align: center;
   width: 95%;
 }
