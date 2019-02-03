@@ -70,30 +70,27 @@
             <article class="src-buttons">
               <button id="submit-button">SUBMIT GUESS</button>
               <button id="reset-button">RESET GAME</button>
-              <button id="clear-button">CLEAR GUESS</button>
+              <button id="clear-button">CLEAR GAME</button>
             </article>
           </div>
         </section>
 
-        <section class="challenger-scores">
-          <h3 class="bold">Latest Score</h3>
-          <div class="score-section">
-            <article class ="challenger1">
-              <p class="challenger1-name">Challenger 1 Name</p>
-              <p>current guess</p>
-              <p id="ch1-guess" class="current-guess">97</p>
-              <p id="ch1-feedback-message">that's too high</p>
-            </article>
-            <div class="vertical-line">
-            </div>
-            <article class="challenger2">
-              <p class="challenger2-name">Challenger 2 Name</p>
-              <p>current guess</p>
-              <p class="current-guess" id="ch2-guess">3</p>
-              <p id="ch2-feedback-message">that's too low</p>
-            </article>
+        <section class="challenger-guesses">
+          <div id="challenger1-latest-guess">
+            <span class="latest-score">Latest Score</span><br>
+            <p class="challenger1-name">Challenger 1 Name</p>
+            <p>Current Guess</p>
+            <p class="current-guess" id="ch1-guess">97</p>
+            <p id="ch1-feedback-message">that's too high</p>
           </div>
-        </section> 
+
+          <div id="challenger2-latest-guess">
+            <span class="hide-me"> placeholder </span><br>
+            <p class="challenger2-name">Challenger 2 Name</p>
+            <p>Current Guess</p>
+            <p class="current-guess" id="ch2-guess">3</p>
+            <p id="ch2-feedback-message">that's too low</p>
+          </div>
       </div>  
     </main>
 
@@ -107,7 +104,7 @@
           </article>
           <hr>
           <article class="card-body">
-            <p id="winner-name">Challenger 1 Name</p>
+            <p id="winner-name">Challenger Name</p>
             <p class="winner">WINNER</p>
           </article>
           <hr>

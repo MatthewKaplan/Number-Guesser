@@ -1,7 +1,6 @@
 /*---------Body-----------------*/
-body{
+body {
   font-family: 'Open Sans', sans-serif;
-  height:100%;
 }
 
 .underlined{
@@ -15,7 +14,8 @@ p{
   margin-top: 0;
 }
 
-h3{
+h3,
+.latest-score {
   color: #6E6E6E;
   margin-bottom: 0px;
 }
@@ -23,9 +23,10 @@ h3{
 content{
   display: flex;
 }
-.bold{
+p.bold{
   font-weight: bold;
 }
+
 /*---------Header---------------*/
 h1{
   color: #DD1972;
@@ -93,20 +94,13 @@ textarea:focus{
   border-color: #DD1972;
   padding: 2px;
 }
-.verticalLine {
-  border-left: thick solid;
-  border-color: #D0D2D3;
-}
-/*input:hover{
-  border:4px solid:#DD1972;
-}*/
 
 .left-column {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: flex-start;
   width: 100%;
-  height: 100%;
+  height: 100vh;
 }
 
 #update-button{
@@ -129,20 +123,37 @@ textarea:focus{
   flex-direction: row;
 }
 
-.score-section {
-  display: flex;
-  justify-content: space-around;
-  margin-top: 10px;
-}
-
-.challenger1 {
+#challenger1-latest-guess,
+#challenger2-latest-guess{
+  flex:1;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.challenger2 {
+#challenger1-latest-guess .latest-score{
+  width: 100%;
+  font-weight: bold;
+  font-size:1.2rem;
+}
+
+.challenger-guesses {
+  display: flex;
+}
+
+#challenger2-latest-guess{
+  border-left: 1px solid lightgrey;
+}
+
+.challenger1-guess {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.challenger2-guess {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -151,11 +162,15 @@ textarea:focus{
 
 .set-range,
 .user-guess,
-.challenger-scores {
+.challenger-guesses {
   background-color: white;
   border: 2px solid #DBDBDB;
   margin: 15px 20px;
   padding: 10px;
+}
+
+.hide-me {
+  visibility: hidden;
 }
 
 button{
@@ -220,7 +235,7 @@ p#winner-name{
   align-items: center;
   display: flex;
   flex-direction: column;
-  height: 100%;
+  height: 100vh;
   overflow: hidden;
   text-align: center;
   width: 100%;
@@ -269,9 +284,6 @@ hr {
   display: flex;
 }
 
-<<<<<<< Updated upstream
-/*--------Media Queries---------*/
-=======
 /*--------Media Queries---------*/
 /*@media screen and (max-width: 1145px){
   article.input-boxes{
@@ -284,4 +296,3 @@ hr {
   flex-direction: column;
 }
 } */
->>>>>>> Stashed changes
