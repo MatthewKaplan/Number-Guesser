@@ -4,8 +4,8 @@ body {
 }
 
 .underlined{
-  text-decoration: underline;
   font-weight: bold;
+  text-decoration: underline;
 }
 
 p{
@@ -30,16 +30,16 @@ p.bold{
 /*---------Header---------------*/
 h1{
   color: #DD1972;
+  font-size: 48px;
+  margin-left: 10px;
   margin-top: 0px;
   padding-top: 20px;
-  margin-left: 10px;
-  font-size: 48px;
   }
 
 header{
   background-color: #404041;
-  text-align: center;
   padding-bottom: 30px;
+  text-align: center;
 }
 
 .header-span{
@@ -47,8 +47,8 @@ header{
 }
 
 p.subtitle{
-  margin-bottom: 0;
   color: #ffffff;
+  margin-bottom: 0;
 }
 
 .main-flex {
@@ -75,10 +75,10 @@ input#challenger-guess1{
 
 main {
   align-items: center;
+  background-color: #f7f7f7;
   display: flex;
   justify-content: center;
   width: 50%;
-  background-color: #f7f7f7;
 }
 
 input{
@@ -86,8 +86,8 @@ input{
 }
 
 input:focus{
-  outline: none;
   border-color: #DD1972;
+  outline: none;
   padding: 2px;
 }
 
@@ -99,9 +99,9 @@ textarea:focus{
 .left-column {
   display: flex;
   flex-direction: column;
+  height: 100vh;
   justify-content: flex-start;
   width: 100%;
-  height: 100vh;
 }
 
 #update-button{
@@ -126,17 +126,17 @@ textarea:focus{
 
 #challenger1-latest-guess,
 #challenger2-latest-guess{
-  flex:1;
+  align-items: center;
   display: flex;
   flex-direction: column;
+  flex:1;
   justify-content: center;
-  align-items: center;
 }
 
 #challenger1-latest-guess .latest-score{
-  width: 100%;
-  font-weight: bold;
   font-size:1.2rem;
+  font-weight: bold;
+  width: 100%;
 }
 
 .challenger-guesses {
@@ -148,17 +148,17 @@ textarea:focus{
 }
 
 .challenger1-guess {
+  align-items: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
 }
 
 .challenger2-guess {
+  align-items: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
 }
 
 .set-range,
@@ -175,12 +175,12 @@ textarea:focus{
 }
 
 button{
-  border-radius: 50px;
   background-color: #6E6E6E;
+  border-radius: 50px;
   color:#ffffff;
-  margin-left: 10px;
-  font-weight: bold;
   display: flex;
+  font-weight: bold;
+  margin-left: 10px;
 }
 
 button:active{
@@ -230,9 +230,9 @@ p#winner-name{
 }
 
 .right-column {
+  align-items: center;
   background-color: #D0D2D3;
   border-left: 2px solid #abacad;
-  align-items: center;
   display: flex;
   flex-direction: column;
   height: 100vh;
@@ -247,8 +247,8 @@ p#winner-name{
   display: flex;
   flex-direction: column;
   margin-top: 10px;
-  width: 90%;
   text-transform: uppercase;
+  width: 90%;
 }
 
 .card-header {
@@ -263,9 +263,9 @@ p#winner-name{
 }
 
 .card-body {
+  justify-content: center;
 /*  display: flex;*/
 /*  flex-direction: column;*/
-  justify-content: center;
 }
 
 hr {
