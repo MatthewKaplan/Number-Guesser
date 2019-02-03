@@ -55,8 +55,9 @@ p.subtitle{
 }
 
 /*---------Input Column----------*/
-.challenger1-name{
+.challenger-names{
   font-weight: bold;
+  text-transform: uppercase;
 }
 
 .challenger2-name{
@@ -154,7 +155,6 @@ textarea:focus{
   background-color: white;
   border: 2px solid #DBDBDB;
   margin: 15px 20px;
-  width: 92%;
   padding: 10px;
 }
 
@@ -212,7 +212,6 @@ aside {
 p#winner-name{
   font-size: 2.5em;
   font-weight: bold;
-  text-transform: uppercase;
 }
 
 .right-column {
@@ -234,6 +233,7 @@ p#winner-name{
   flex-direction: column;
   margin-top: 10px;
   width: 90%;
+  text-transform: uppercase;
 }
 
 .card-header {
@@ -269,4 +269,19 @@ hr {
   display: flex;
 }
 
+<<<<<<< Updated upstream
 /*--------Media Queries---------*/
+=======
+/*--------Media Queries---------*/
+/*@media screen and (max-width: 1145px){
+  article.input-boxes{
+    flex-direction: column;
+  }
+}
+@media screen and (min-width: 930px){
+  .challengers{
+  display: flex;
+  flex-direction: column;
+}
+} */
+>>>>>>> Stashed changes
