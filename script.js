@@ -40,28 +40,38 @@ console.log(generatedRandomNumber);
 
 // Update the current range that the user enters and randomly generates a number between that range
 function updateRange() {
+
   minRangeSet = parseInt(minRangeSet.value);
   maxRangeSet = parseInt(maxRangeSet.value);
-  if (minRangeSet >= maxRangeSet) {
+
+  if ( minRangeSet.length <= 0 || maxRangeSet.length <= 0 ) {
+    alert('Please enter a minimum and maximum range');
+  } else if (minRangeSet >= maxRangeSet) {
     alert('Please make max range number larger then min range number');
-  } else{ 
-  minNumber.innerText = minRangeSet;
-  maxNumber.innerText = maxRangeSet;
+  } else {
+    minNumber.innerText = minRangeSet;
+    maxNumber.innerText = maxRangeSet;
   }
+
   var generatedRandomNumber = randomNumber(minRangeSet,maxRangeSet);
   console.log(generatedRandomNumber);
+  clearGame();
 };
 
 function challengersGuesses() {
   if (challenger1guess.value === '') {
     guessPlaceholder1.innerText = '97'
+  } else if (challenger1guess.value < minRangeSet || challenger1guess.value > maxRangeSet) {
+    alert('Nope that is outside of the range')
   } else {
     guessPlaceholder1.innerText = challenger1guess.value;
   }
 
   if (challenger2guess.value === '') {
     guessPlaceholder2.innerText = '3'
-  } else {
+    } else if (challenger2guess.value < minRangeSet || challenger2guess.value > maxRangeSet) {
+      alert('Nope that is outside of the range')
+    } else {
     guessPlaceholder2.innerText = challenger2guess.value;
   }
 }
@@ -77,13 +87,13 @@ function randomNumber(min, max) {
 function feedback1() {
   var givenNumber = parseInt(challenger1guess.value);
   if (givenNumber < generatedRandomNumber) {
-    feedbackMessage1.innerText = 'That\'s too low'
+    feedbackMessage1.innerText = 'that\'s too low'
   } else if (givenNumber > generatedRandomNumber) {
-    feedbackMessage1.innerText = 'That\'s too high'
+    feedbackMessage1.innerText = 'that\'s too high'
   } else if (givenNumber === generatedRandomNumber) {
     feedbackMessage1.innerText = 'BOOM!'
   } else {
-    feedbackMessage1.innerText = 'That\'s too high'
+    feedbackMessage1.innerText = 'that\'s too high'
   }
 }
 
@@ -91,13 +101,13 @@ function feedback1() {
 function feedback2() {
   var givenNumber = parseInt(challenger2guess.value);
   if (givenNumber < generatedRandomNumber) {
-    feedbackMessage2.innerText = 'That\'s too low'
+    feedbackMessage2.innerText = 'that\'s too low'
   } else if (givenNumber > generatedRandomNumber) {
-    feedbackMessage2.innerText = 'That\'s too high'
+    feedbackMessage2.innerText = 'that\'s too high'
   } else if (givenNumber === generatedRandomNumber) {
     feedbackMessage2.innerText = 'BOOM!'
   } else {
-    feedbackMessage2.innerText = 'That\'s too low'
+    feedbackMessage2.innerText = 'that\'s too low'
   }
 }
 
@@ -128,7 +138,7 @@ function emptyGuessInputs() {
 
 function emptyNameInputs() {
   if (challengerName1.value === '' || challengerName2.value === '') {
-    alert('please enter a name')
+    alert('Please enter a name')
   }
 }
 
