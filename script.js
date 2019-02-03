@@ -3,6 +3,8 @@ var challenger2guess = document.querySelector('#challenger-guess2');
 var guessPlaceholder1 = document.querySelector('#ch1-guess');
 var guessPlaceholder2 = document.querySelector('#ch2-guess');
 
+// var ch1Guess = parseInt(challenger1guess.value);
+
 var minRangeSet = document.querySelector('#min-range-set');
 var maxRangeSet = document.querySelector('#max-range-set');
 var minNumber = document.querySelector('#min-number');
@@ -20,6 +22,8 @@ var clearGameButton = document.querySelector('#clear-button');
 var resetButton = document.querySelector('#reset-button');
 var generatedRandomNumber = randomNumber(1,100);
 
+var winnerName = document.querySelector('#winner-name');
+
 guessSubmitButton.addEventListener('click', playGame);
 clearGameButton.addEventListener('click', clearGame);
 updateButton.addEventListener('click', updateRange);
@@ -33,6 +37,7 @@ function playGame () {
   feedback2();
   challengersGuesses();
   challengerNames();
+  updateWinnerName();
 }
 
 // Testing Random number generater in the console
@@ -163,3 +168,21 @@ function newGame(){
   minNumber.innerText = '1';
   maxNumber.innerText = '100';
 };
+
+//Sets the input field to only take numbers
+// function numericalValueOnly(minRangeSet, maxRangeSet challenger1guess, challenger2guess){
+//   var numerical = 0-9;
+//   if ( minRangeSet())
+//     {
+
+//Sets the winner name in the right column if they guess the exact number
+function updateWinnerName(){
+  console.log ('guesses',typeof(challenger1guess.value),parseInt(challenger1guess.value),parseInt(challenger2guess.value),generatedRandomNumber);
+  if (parseInt(challenger1guess.value) === generatedRandomNumber){
+   return winnerName.innerText = challengerName1.value;
+  }else if (parseInt(challenger2guess.value) === generatedRandomNumber) {
+    return winnerName.innerText = challengerName2.value;
+  }else {
+    return winnerName.innerText = 'Challenger Name';
+  }
+}
