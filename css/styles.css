@@ -1,4 +1,4 @@
----------Body-----------------*/
+/*---------Body-----------------*/
 body {
   font-family: 'Open Sans', sans-serif;
 }
@@ -22,6 +22,9 @@ h3,
 
 content{
   display: flex;
+}
+p.bold{
+  font-weight: bold;
 }
 
 /*---------Header---------------*/
