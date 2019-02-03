@@ -63,6 +63,7 @@ p.subtitle{
 
 .challenger2-name{
   font-weight: bold;
+/*  text-transform: capitalize;*/
 }
 
 /*input#challenger-name1{
@@ -178,7 +179,6 @@ button{
   background-color: #6E6E6E;
   color:#ffffff;
   margin-left: 10px;
-  height: 30px;
   font-weight: bold;
   display: flex;
 }
