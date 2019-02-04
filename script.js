@@ -3,8 +3,6 @@ var challenger2guess = document.querySelector('#challenger-guess2');
 var guessPlaceholder1 = document.querySelector('#ch1-guess');
 var guessPlaceholder2 = document.querySelector('#ch2-guess');
 
-// var ch1Guess = parseInt(challenger1guess.value);
-
 var minRangeSet = document.querySelector('#min-range-set');
 var maxRangeSet = document.querySelector('#max-range-set');
 var minNumber = document.querySelector('#min-number');
@@ -21,13 +19,6 @@ var guessSubmitButton = document.querySelector('#submit-button');
 var clearGameButton = document.querySelector('#clear-button');
 var resetButton = document.querySelector('#reset-button');
 var generatedRandomNumber = randomNumber(1,100);
-
-var challenger1NameError = document.querySelector('#challenger1-name-error');
-var challenger2NameError = document.querySelector('#challenger2-name-error');
-var challenger1GuessError = document.querySelector('#challenger1-guess-error');
-var challenger2GuessError = document.querySelector('#challenger2-guess-error');
-var minRangeError = document.querySelector('#min-range-error');
-var maxRangeError = document.querySelector('#max-range-error');
 
 var winnerName = document.querySelector('#winner-name');
 
@@ -50,28 +41,33 @@ function playGame () {
 // Testing Random number generater in the console
 console.log(generatedRandomNumber);
 
+function minMaxError(minOrmax, visibleOrhidden) {
+  const error = document.querySelector(`#${minOrmax}-range-error`);
+  error.style.visibility = visibleOrhidden;
+}
+
 // Update the current range that the user enters and randomly generates a number between that range
 function updateRange() {
 
   var minRange = parseInt(minRangeSet.value);
   var maxRange = parseInt(maxRangeSet.value);
   if (!minRangeSet.value && !maxRangeSet.value) {
-    minRangeError.style.visibility = 'visible';
-    maxRangeError.style.visibility = 'visible';
+    minMaxError('min','visible');
+    minMaxError('max','visible');
     return;
   } else if (!minRangeSet.value) {
-    minRangeError.style.visibility = 'visible';
-    maxRangeError.style.visibility = 'hidden';
+    minMaxError('min','visible');
+    minMaxError('max','hidden');
   } else if (!maxRangeSet.value) {
-    maxRangeError.style.visibility = 'visible';
-    minRangeError.style.visibility = 'hidden';
+    minMaxError('max','visible');
+    minMaxError('min','hidden');
   } else if (minRange >= maxRange) {
     alert('Please make max range number larger then min range number');
   } else {
     minNumber.innerText = minRange;
     maxNumber.innerText = maxRange;
-    minRangeError.style.visibility = 'hidden';
-    maxRangeError.style.visibility = 'hidden';
+    minMaxError('min','hidden');
+    minMaxError('max','hidden');
   }
   generatedRandomNumber = randomNumber(minRange,maxRange);
   console.log(generatedRandomNumber);
@@ -154,35 +150,45 @@ function challengerNames() {
 };
 }
 
+function guessError(challenger1Orchallenger2, visibleOrhidden) {
+  const error = document.querySelector(`#${challenger1Orchallenger2}-guess-error`);
+  error.style.visibility = visibleOrhidden;
+}
+
 function emptyGuessInputs() {
   if (!challenger1guess.value && !challenger2guess.value) {
-    challenger1GuessError.style.visibility = 'visible';
-    challenger2GuessError.style.visibility = 'visible';
+    guessError('challenger1','visible');
+    guessError('challenger2','visible');
   } else if (!challenger1guess.value) {
-    challenger1GuessError.style.visibility = 'visible';
-    challenger2GuessError.style.visibility = 'hidden';
+    guessError('challenger1','visible');
+    guessError('challenger2','hidden');
   } else if (!challenger2guess.value) {
-    challenger2GuessError.style.visibility = 'visible';
-    challenger1GuessError.style.visibility = 'hidden';
+    guessError('challenger2','visible');
+    guessError('challenger1','hidden');
   } else {
-    challenger1GuessError.style.visibility = 'hidden';
-    challenger2GuessError.style.visibility = 'hidden';
+    guessError('challenger1','hidden');
+    guessError('challenger2','hidden');
   }
+}
+
+function nameError(challenger1Orchallenger2, visibleOrhidden) {
+  const error = document.querySelector(`#${challenger1Orchallenger2}-name-error`);
+  error.style.visibility = visibleOrhidden;
 }
 
 function emptyNameInputs() {
   if (!challengerName1.value && !challengerName2.value) {
-    challenger1NameError.style.visibility = 'visible';
-    challenger2NameError.style.visibility = 'visible';
+    nameError('challenger1','visible');
+    nameError('challenger2','visible');
   } else if (!challengerName1.value) {
-    challenger1NameError.style.visibility = 'visible';
-    challenger2NameError.style.visibility = 'hidden';
+    nameError('challenger1','visible');
+    nameError('challenger2','hidden');
   } else if (!challengerName2.value) {
-    challenger2NameError.style.visibility = 'visible';
-    challenger1NameError.style.visibility = 'hidden';
+    nameError('challenger2','visible');
+    nameError('challenger1','hidden');
   } else {
-    challenger1NameError.style.visibility = 'hidden';
-    challenger2NameError.style.visibility = 'hidden';
+    nameError('challenger1','hidden');
+    nameError('challenger2','hidden');
   }
 }
 
@@ -193,12 +199,12 @@ function clearGame(){
   challengerName2.value = '';
   minRangeSet.value = '';
   maxRangeSet.value = '';
-  challenger1NameError.style.visibility = 'hidden';
-  challenger2NameError.style.visibility = 'hidden';
-  challenger1GuessError.style.visibility = 'hidden';
-  challenger2GuessError.style.visibility = 'hidden';
-  minRangeError.style.visibility = 'hidden';
-  maxRangeError.style.visibility = 'hidden';
+  nameError('challenger1','hidden');
+  nameError('challenger2','hidden');
+  guessError('challenger1','hidden');
+  guessError('challenger2','hidden');
+  minMaxError('min','hidden');
+  minMaxError('max','hidden');
 }
 
 // Sets game to initial state
