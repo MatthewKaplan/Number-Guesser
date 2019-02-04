@@ -27,11 +27,13 @@
           <article class="input-boxes">
             <div class="user-input">
               <p>Min Range</p>
-              <input type="" name="user_range" id="min-range-set" class="left-column-input">
+              <input type="" name="user_range" id="min-range-set" class="left-column-input"><br>
+              <span class="error" id="min-range-error">Enter a min range</span>
             </div>
             <div class="user-input">
               <p>Max Range</p>
-              <input type="" name="user_range" id="max-range-set" class="left-column-input">
+              <input type="" name="user_range" id="max-range-set" class="left-column-input"><br>
+              <span class="error" id="max-range-error">Enter a max range</span>
 
             </div>
             <button id="update-button" class="src-buttons">UPDATE</button>
@@ -48,10 +50,12 @@
               <div class="challenger-name">
                 <p>Name</p>
                 <input type="username" name="user_name" id="challenger-name1">
+                <span class="error" id="challenger1-name-error">Enter a name </span>
               </div>
               <div class="user-input">
                 <p>Guess</p>
                 <input type="number" name="user_guess" id="challenger-guess1">
+                <span class="error" id="challenger1-guess-error">Enter a guess</span>
               </div>
             </article>
 
@@ -60,10 +64,12 @@
               <div class="challenger-name">
                 <p>Name</p>
                 <input type="username" name="user_name" id="challenger-name2">
+                <span class="error" id="challenger2-name-error">Enter a name</span>
               </div>
               <div class="user-input">
                 <p>Guess</p>
                 <input type="number" name="user_guess" id="challenger-guess2">
+                <span class="error" id="challenger2-guess-error">Enter a guess</span>
               </div>
             </article>
 

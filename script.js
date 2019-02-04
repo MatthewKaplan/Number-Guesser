@@ -22,6 +22,13 @@ var clearGameButton = document.querySelector('#clear-button');
 var resetButton = document.querySelector('#reset-button');
 var generatedRandomNumber = randomNumber(1,100);
 
+var challenger1NameError = document.querySelector('#challenger1-name-error');
+var challenger2NameError = document.querySelector('#challenger2-name-error');
+var challenger1GuessError = document.querySelector('#challenger1-guess-error');
+var challenger2GuessError = document.querySelector('#challenger2-guess-error');
+var minRangeError = document.querySelector('#min-range-error');
+var maxRangeError = document.querySelector('#max-range-error');
+
 var winnerName = document.querySelector('#winner-name');
 
 guessSubmitButton.addEventListener('click', playGame);
@@ -48,14 +55,23 @@ function updateRange() {
 
   var minRange = parseInt(minRangeSet.value);
   var maxRange = parseInt(maxRangeSet.value);
-  if ( minRangeSet.value === '' || maxRangeSet.value === '' ) {
-    alert('Please enter a minimum and maximum range');
+  if (!minRangeSet.value && !maxRangeSet.value) {
+    minRangeError.style.visibility = 'visible';
+    maxRangeError.style.visibility = 'visible';
     return;
+  } else if (!minRangeSet.value) {
+    minRangeError.style.visibility = 'visible';
+    maxRangeError.style.visibility = 'hidden';
+  } else if (!maxRangeSet.value) {
+    maxRangeError.style.visibility = 'visible';
+    minRangeError.style.visibility = 'hidden';
   } else if (minRange >= maxRange) {
     alert('Please make max range number larger then min range number');
   } else {
     minNumber.innerText = minRange;
     maxNumber.innerText = maxRange;
+    minRangeError.style.visibility = 'hidden';
+    maxRangeError.style.visibility = 'hidden';
   }
   generatedRandomNumber = randomNumber(minRange,maxRange);
   console.log(generatedRandomNumber);
@@ -67,7 +83,7 @@ function challengersGuesses() {
   minNumber = parseInt(minNumber.innerText);
   maxNumber = parseInt(maxNumber.innerText);
 
-  if (challenger1guess.value === '') {
+  if (!challenger1guess.value) {
     guessPlaceholder1.innerText = '97'
   } else if (challenger1guess.value < minNumber || challenger1guess.value > maxNumber) {
     alert('Nope that is outside of the range')
@@ -75,7 +91,7 @@ function challengersGuesses() {
     guessPlaceholder1.innerText = challenger1guess.value;
   }
 
-  if (challenger2guess.value === '') {
+  if (!challenger2guess.value) {
     guessPlaceholder2.innerText = '3'
     } else if (challenger2guess.value < minNumber || challenger2guess.value > maxNumber) {
       alert('Nope that is outside of the range')
@@ -122,7 +138,7 @@ function feedback2() {
 // Changes name placeholders to user inputs 
 function challengerNames() {
   for ( var i = 0; i < challenger1Name.length; i++) {
-    if (challengerName1.value === '') {
+    if (!challengerName1.value) {
       challenger1Name[i].innerText = 'Challenger 1 Name'
     } else {
       challenger1Name[i].innerText = challengerName1.value;
@@ -130,7 +146,7 @@ function challengerNames() {
 };
 
   for ( var i = 0; i < challenger2Name.length; i++) { 
-    if(challengerName2.value === '') {
+    if(!challengerName2.value) {
       challenger2Name[i].innerText = 'Challenger 2 Name'
     } else {
       challenger2Name[i].innerText = challengerName2.value;
@@ -139,14 +155,34 @@ function challengerNames() {
 }
 
 function emptyGuessInputs() {
-  if (challenger1guess.value === '' || challenger2guess.value === '') {
-    alert('Please enter a guess')
+  if (!challenger1guess.value && !challenger2guess.value) {
+    challenger1GuessError.style.visibility = 'visible';
+    challenger2GuessError.style.visibility = 'visible';
+  } else if (!challenger1guess.value) {
+    challenger1GuessError.style.visibility = 'visible';
+    challenger2GuessError.style.visibility = 'hidden';
+  } else if (!challenger2guess.value) {
+    challenger2GuessError.style.visibility = 'visible';
+    challenger1GuessError.style.visibility = 'hidden';
+  } else {
+    challenger1GuessError.style.visibility = 'hidden';
+    challenger2GuessError.style.visibility = 'hidden';
   }
 }
 
 function emptyNameInputs() {
-  if (challengerName1.value === '' || challengerName2.value === '') {
-    alert('Please enter a name')
+  if (!challengerName1.value && !challengerName2.value) {
+    challenger1NameError.style.visibility = 'visible';
+    challenger2NameError.style.visibility = 'visible';
+  } else if (!challengerName1.value) {
+    challenger1NameError.style.visibility = 'visible';
+    challenger2NameError.style.visibility = 'hidden';
+  } else if (!challengerName2.value) {
+    challenger2NameError.style.visibility = 'visible';
+    challenger1NameError.style.visibility = 'hidden';
+  } else {
+    challenger1NameError.style.visibility = 'hidden';
+    challenger2NameError.style.visibility = 'hidden';
   }
 }
 
@@ -157,6 +193,12 @@ function clearGame(){
   challengerName2.value = '';
   minRangeSet.value = '';
   maxRangeSet.value = '';
+  challenger1NameError.style.visibility = 'hidden';
+  challenger2NameError.style.visibility = 'hidden';
+  challenger1GuessError.style.visibility = 'hidden';
+  challenger2GuessError.style.visibility = 'hidden';
+  minRangeError.style.visibility = 'hidden';
+  maxRangeError.style.visibility = 'hidden';
 }
 
 // Sets game to initial state
