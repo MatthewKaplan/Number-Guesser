@@ -17,7 +17,8 @@ p {
 h3,
 .latest-score {
   color: #6E6E6E;
-  margin-bottom: 0px;
+  margin-top: 0;
+  margin-bottom: 5px;
 }
 
 content {
@@ -45,6 +46,7 @@ header {
   background-color: #404041;
   padding-bottom: 30px;
   text-align: center;
+  text-transform: uppercase;
 }
 
 #subtitle::before {
@@ -119,12 +121,13 @@ textarea:focus {
 }
 
 #update-button {
-  justify-content: center;
+  width: 33%;
 }
 
 .input-boxes {
   display: flex;
   flex-direction: row;
+  width: 100%;
 }
 
 .range-flex {
@@ -133,19 +136,27 @@ textarea:focus {
   margin-bottom: 15px;
 }
 
+.current-guess-title {
+  margin-bottom: 25px;
+}
+
 .challenger-input {
   display: flex;
   justify-content: space-between;
+  width: 100%;
 }
 
-input#challenger-name1,
-input#challenger-name2 {
-  width: 340px;
+.user-input {
+  width: 33%;
 }
 
-input#challenger-guess1,
-input#challenger-guess2 {
-  width: 150px;
+.challenger-name {
+  width: 63%;
+}
+
+#challenger-name1,
+#challenger-name2 {
+  width: 100%;
 }
 
 #challenger1-latest-guess,
@@ -205,6 +216,9 @@ button {
   display: flex;
   font-weight: bold;
   margin-left: 10px;
+  text-transform: uppercase;
+  justify-content: center;
+  height: 32px;
 }
 
 button:active {
@@ -220,9 +234,18 @@ button:hover {
 }
 
 .src-buttons {
+  margin: 15px;
+}
+
+#button-div {
+  width: 100%;
   display: flex;
-  justify-content: space-evenly;
-  margin-top: 15px;
+}
+
+#submit-button,
+#reset-button,
+#clear-button {
+  width: 33%;
 }
 
 .current-guess {

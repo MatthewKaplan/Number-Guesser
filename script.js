@@ -64,12 +64,12 @@ function updateRange() {
   } else if (minRange >= maxRange) {
     alert('Please make max range number larger then min range number');
   } else {
-    minNumber.innerText = minRange;
-    maxNumber.innerText = maxRange;
     minMaxError('min','hidden');
     minMaxError('max','hidden');
+    minNumber.innerText = minRange;
+    maxNumber.innerText = maxRange;
+    generatedRandomNumber = randomNumber(minRange,maxRange);
   }
-  generatedRandomNumber = randomNumber(minRange,maxRange);
   console.log(generatedRandomNumber);
 };
 
