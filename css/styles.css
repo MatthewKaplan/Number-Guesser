@@ -101,6 +101,10 @@ textarea:focus {
   padding: 2px;
 }
 
+.fa-exclamation-triangle {
+  margin-right: 5px;
+}
+
 .left-column {
   display: flex;
   flex-direction: column;
