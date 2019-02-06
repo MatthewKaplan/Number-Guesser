@@ -22,7 +22,7 @@ var clearGameButton = document.querySelector('#clear-button');
 var resetButton = document.querySelector('#reset-button');
 var generatedRandomNumber = randomNumber(1,100);
 
-var card = document.querySelector('.right-column')
+var card = document.querySelector('.right-column');
 var winnerName = document.querySelector('#winner-name');
 
 guessSubmitButton.addEventListener('click', playGame);
@@ -221,6 +221,7 @@ function updateWinnerName(){
 var totalGuesses = 0;
 function guessCounter () {
   totalGuesses += 2;
+}
   
 
 var rangeInputBoxes = document.querySelector('.input-boxes');
@@ -294,4 +295,4 @@ function deleteCard(e) {
     console.log('test');
     e.target.parentElement.parentElement.parentElement.remove();
   }
-}
+};
