@@ -238,7 +238,33 @@ function updateWinnerName(){
   }
 }
 
+var rangeInputBoxes = document.querySelector('.input-boxes');
 
+rangeInputBoxes.addEventListener('keydown', validateRange);
+
+function validateRange(e) {
+  console.log(typeof e.key);
+  var regex = /[\b0-9]/;
+  if (e.key === 'Backspace') {
+    console.log('BACK');
+  }
+
+  if (e.key === 'Backspace' || regex.test(e.key)) {
+
+  } else {
+    e.preventDefault();
+  }
+}
+
+var right = document.querySelector('.right-column')
+right.addEventListener('click', deleteCard);
+
+function deleteCard(e) {
+  if (e.target.classList.contains('delete-btn')) {
+    console.log('test');
+    e.target.parentElement.parentElement.parentElement.remove();
+  }
+}
 
 
 
