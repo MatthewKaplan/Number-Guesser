@@ -217,14 +217,28 @@ function updateWinnerName(){
   }
 }
 
-function deleteCard(event) {
-  event.target.closest('.card-results').remove();
-}
-
 // Guess Counter 
 var totalGuesses = 0;
 function guessCounter () {
   totalGuesses += 2;
+  
+
+var rangeInputBoxes = document.querySelector('.input-boxes');
+
+rangeInputBoxes.addEventListener('keydown', validateRange);
+
+function validateRange(e) {
+  console.log(typeof e.key);
+  var regex = /[\b0-9]/;
+  if (e.key === 'Backspace') {
+    console.log('BACK');
+  }
+
+  if (e.key === 'Backspace' || regex.test(e.key)) {
+
+  } else {
+    e.preventDefault();
+  }
 }
 
 // Start Timer
@@ -272,9 +286,12 @@ function displayCard(winner) {
   </section>`
   endTimer ();
   card.innerHTML += winningCard;
-  card.addEventListener('click', function(event) {
-  if(event.target.classList.contains('delete-button')) {
-    deleteCard(event);
+  card.addEventListener('click', deleteCard);
+}
+  
+function deleteCard(e) {
+  if (e.target.classList.contains('delete-button')) {
+    console.log('test');
+    e.target.parentElement.parentElement.parentElement.remove();
   }
-});
 }
