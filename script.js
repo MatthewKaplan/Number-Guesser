@@ -295,12 +295,3 @@ function deleteCard(e) {
     console.log('test');
   }
 }
-
-('').on("keyup", action);
-function action() {
-   if($('.recipe-name').val().length > 0) {
-      $('#submit-name').prop("disabled", false);
-   }else {
-      $('#submit-name').prop("disabled", true);
-   }
-}
