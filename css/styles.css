@@ -18,7 +18,7 @@ h3,
 .latest-score {
   color: #6E6E6E;
   margin-top: 0;
-  margin-bottom: 5px;
+/*  margin-bottom: 5px;*/
 }
 
 content {
@@ -32,7 +32,7 @@ p.bold {
 /*---------Header---------------*/
 .header-title {
   color: #DD1972;
-  font-size: 55px;
+  font-size: 3em;
   margin: 0 0 0 0;
   padding-top: 20px;
 }
@@ -244,13 +244,13 @@ button:hover {
 
 .current-guess {
   color: #DD1972;
-  font-size: 48pt;
+  font-size: 2.8em;
   font-weight: bold;
   margin:0;
 }
 
 p#ch1-feedback-message {
-  font-size: 20px;
+  font-size: 1.5em;
 }
 
 p#ch2-feedback-message {
@@ -344,16 +344,89 @@ hr {
 .footer-flex {
   display: flex;
 }
-
-/*--------Media Queries---------*/
-/*@media screen and (max-width: 1145px){
-  article.input-boxes{
-    flex-direction: column;
-  }
+button:focus{
+  outline: none;
 }
-@media screen and (min-width: 930px){
-  .challengers{
+/*--------Media Queries---------*/
+/*@media screen and (max-width: 1024px){
+button{
+  height: 38px;
+  width: auto;
+}
+.content{
+  width: 50%;
+}
+input{
+  line-height: auto;
+}*/
+}
+@media screen and (max-width: 600px){
+.challengers{
   display: flex;
   flex-direction: column;
 }
-} */
+.main-flex{
+  display: block;
+}
+.content{
+  width: 100%;
+
+}
+.challenger-input{
+  display: block;
+}
+input{
+  border:1px solid lightgray;
+}
+.set-range,
+.user-guess,
+.challenger-guesses{
+  height: 100%;
+  display: block;
+}
+#submit-button,
+#reset-button,
+#clear-button{
+  width: 100%;
+  margin-left: 0;
+  margin-top: 10px;
+}
+#button-div{
+  display: block;
+  align-items: center;
+}
+.article-input{
+  display: block;
+  align-items: center;
+}
+aside{
+  width: 100%;
+  height: 100%;
+}
+.input-boxes{
+  display: block;
+}
+.user-input{
+  display: block;
+  width: 100%
+}
+.left-column{
+  height: 100%;
+}
+#challenger1-latest-guess{
+  margin-bottom: 30px;
+}
+#challenger2-latest-guess{
+  border-left: none;
+  border-top: 1px solid lightgrey;
+}
+.challenger-name {
+  width:100%;
+}
+.header-title{
+  font-size: 2em;
+}
+#subtitle{
+  font-size: .75em;
+}
+} 

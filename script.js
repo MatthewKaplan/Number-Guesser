@@ -22,7 +22,7 @@ var clearGameButton = document.querySelector('#clear-button');
 var resetButton = document.querySelector('#reset-button');
 var generatedRandomNumber = randomNumber(1,100);
 
-var card = document.querySelector('.right-column')
+var card = document.querySelector('.right-column');
 var winnerName = document.querySelector('#winner-name');
 
 guessSubmitButton.addEventListener('click', playGame);
@@ -219,8 +219,9 @@ function updateWinnerName(){
 
 // Guess Counter 
 var totalGuesses = 0;
-function guessCounter () {
+function guessCounter (){
   totalGuesses += 2;
+}
   
 
 var rangeInputBoxes = document.querySelector('.input-boxes');
@@ -292,6 +293,14 @@ function displayCard(winner) {
 function deleteCard(e) {
   if (e.target.classList.contains('delete-button')) {
     console.log('test');
-    e.target.parentElement.parentElement.parentElement.remove();
   }
+}
+
+('').on("keyup", action);
+function action() {
+   if($('.recipe-name').val().length > 0) {
+      $('#submit-name').prop("disabled", false);
+   }else {
+      $('#submit-name').prop("disabled", true);
+   }
 }
