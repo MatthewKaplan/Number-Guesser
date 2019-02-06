@@ -88,6 +88,7 @@ main {
 
 input {
   margin-right: 10px;
+  width: 100%;
 }
 
 input:focus {
@@ -119,8 +120,7 @@ textarea:focus {
 
 .input-boxes {
   display: flex;
-  flex-direction: row;
-  width: 100%;
+  justify-content: space-between;
 }
 
 .range-flex {
@@ -140,7 +140,8 @@ textarea:focus {
 }
 
 .user-input {
-  width: 33%;
+  display: inline-block;
+  width: 30%;
 }
 
 .challenger-name {
@@ -316,6 +317,10 @@ p#winner-name {
 /*  flex-direction: column;*/
 }
 
+.guesses {
+  margin-left: 7px;
+}
+
 hr {
   border-top: .5px solid #D0D2D3;
   text-align: center;
@@ -326,6 +331,14 @@ hr {
   display: flex;
   justify-content: space-between;
   margin: 15px;
+}
+
+.delete-button {
+    height: 23px;
+    width: 23px;
+    background: #6e6e6e;
+    color: lightgrey;
+    border-radius: 50%;
 }
 
 .footer-flex {
