@@ -20,6 +20,9 @@ The goal of this project was to receate a 2 player number guesser game using `fl
 
 Download/Clone this repository and open `index.html` in you browser. 
 
+##### Trello Board: 
+https://trello.com/b/2gioYU84/number-guesser
+
 
 ### How to play
 

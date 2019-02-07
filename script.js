@@ -82,7 +82,7 @@ function newGame(){
 function randomNumber(min, max) {
   min = parseInt(min);
   max = parseInt(max);
-  return = Math.floor(Math.random() * (max - min + 1)) + min;
+  return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
 function minMaxError(minMax, visibleHidden) {
@@ -254,7 +254,7 @@ function validateRange(e) {
 }
 
 function displayCard(winner) {
-  let winningCard = `
+  var winningCard = `
   <section class="card-results">
     <article class="card-header">
       <p class="challenger1-name">${challengerName1.value}</p>
@@ -297,8 +297,8 @@ function clearInputs(input1, input2) {
 }
 
 function defaultMinMaxRange() {
-  minNumber.innerText = '1';
-  maxNumber.innerText = '100';
+  document.getElementById('min-number').innerText = '1';
+  document.getElementById('max-number').innerText = '100';
   generatedRandomNumber = randomNumber(1,100);
   console.log(generatedRandomNumber);
 }
