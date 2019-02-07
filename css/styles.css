@@ -28,6 +28,10 @@ content {
 p.bold {
   font-weight: bold;
 }
+input{
+  border:1px solid lightgray;
+  width:80%;
+}
 
 /*---------Header---------------*/
 .header-title {
@@ -88,7 +92,7 @@ main {
 
 input {
   margin-right: 10px;
-  width: 100%;
+/*  width: 100%;*/
 }
 
 input:focus {
@@ -113,9 +117,12 @@ textarea:focus {
   justify-content: flex-start;
   width: 100%;
 }
+.range-buttons{
+  width: 70%;
+}
 
 #update-button {
-  width: 33%;
+  width: 30%;
 }
 
 .input-boxes {
@@ -150,7 +157,7 @@ textarea:focus {
 
 #challenger-name1,
 #challenger-name2 {
-  width: 100%;
+  width: 90%;
 }
 
 #challenger1-latest-guess,
@@ -353,47 +360,46 @@ button:focus{
   display: flex;
   flex-direction: column;
 }
-/*.main-flex{
-  display: block;
-}*/
-/*.content{
-  width: 100%;
 
-}*/
 .src-buttons{
   margin: 0;
+}
+input{
+  width: 100%;
+}
+#challenger-name1,
+#challenger-name2{
+  width:100%;
 }
 .challenger-input{
   display: block;
 }
-input{
-  border:1px solid lightgray;
-}
+
 .set-range,
 .user-guess,
 .challenger-guesses{
-  height: 100%;
+  height: auto;
   display: block;
 }
+
 #submit-button,
 #reset-button,
 #clear-button{
   width: 100%;
   margin-left: 0;
-  margin-top: 10px;
+  margin-top: 5px;
 }
+
 #button-div{
   display: flex;
   flex-direction: column;
 }
+
 .article-input{
   display: block;
   align-items: center;
 }
-aside{
-/*  width: 100%;*/
-/*  height: 100%;*/
-}
+
 .input-boxes{
   display: block;
 }
@@ -405,7 +411,7 @@ aside{
   height: 100%;
 }
 .right-column{
-  height: 100%;
+  height: 100vh;
 }
 /*#challenger1-latest-guess{
   margin-bottom: 30px;
@@ -418,7 +424,7 @@ aside{
   width:100%;
 }
 .header-title{
-  font-size: 2em;
+  font-size: 3em;
 }
 #subtitle{
   font-size: .75em;
@@ -433,6 +439,27 @@ aside{
 /*.left-column{
   height: 100%;
 }*/
+} 
+.range-buttons{
+  width: 100%;
+}
+p.current-guess-title{
+  margin-bottom: 0;
+}
+
+@media screen and (max-width: 768px){
+  p.current-guess-title{
+  margin-bottom: 0;
+}
+
+.user-guess{
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.right-column{
+  height:100%;
+}
+
 } 
 @media screen and (max-width: 600px){
 
@@ -463,14 +490,18 @@ aside{
 }
 .content{
   width: 100%;
-
 }
+
 .main-flex{
   display: block;
 }
 #challenger1-latest-guess{
   margin-bottom: 30px;
 }
+.header-title{
+  font-size: 2.2em;
+}
+
 /*#challenger2-latest-guess{
   border-left: none;
   border-top: 1px solid lightgrey;
