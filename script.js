@@ -31,10 +31,10 @@ updateButton.addEventListener('click', update);
 resetButton.addEventListener('click', newGame);
 
 // Function that calls Feedback functions when submit button is hit 
-function playGame () {
+function playGame() {
   emptyNameInputs(); 
   emptyGuessInputs();
-  startTimer ();
+  startTimer();
   challengersGuesses(challenger1guess, guessPlaceholder1);
   challengersGuesses(challenger2guess, guessPlaceholder2);
   guessCounter();
@@ -44,12 +44,18 @@ function playGame () {
   challengerNames(challenger2Name, challengerName2);
 }
 
-function update () {
+function update() {
   customRange(minRangeSet, maxRangeSet);
 }
 
 function clearGame(){
   clearInputs(challenger1guess, challenger2guess);
+}
+
+// Sets game to initial state
+function newGame(){
+  event.preventDefault();
+  clearGame();
   clearInputs(challengerName1, challengerName2);
   clearInputs(minRangeSet, maxRangeSet);
   nameError('challenger1','hidden');
@@ -59,12 +65,8 @@ function clearGame(){
   minMaxError('min','hidden');
   minMaxError('max','hidden');
   defaultMinMaxRange();
-}
-
-// Sets game to initial state
-function newGame(){
-  event.preventDefault();
-  clearGame();
+  defaultLatestScore(challenger1Name, guessPlaceholder1, feedbackMessage1);
+  defaultLatestScore(challenger2Name, guessPlaceholder2, feedbackMessage2);
 };
 
 // Makes sure min and max are numerical values then creates a random number 
@@ -204,6 +206,12 @@ function defaultMinMaxRange() {
   console.log(generatedRandomNumber);
 }
 
+function defaultLatestScore (challengerName, challengerGuess, feedbackMessage) {
+  challengerName.innerText = 'CHALLENGER NAME';
+  challengerGuess.innerText = '--';
+  feedbackMessage.innerText = 'Play Again!'
+}
+
 //Sets the winner name in the right column if they guess the exact number
 function updateWinnerName(){
   if (parseInt(challenger1guess.value) === generatedRandomNumber){
@@ -221,19 +229,16 @@ function updateWinnerName(){
 var totalGuesses = 0;
 function guessCounter (){
   totalGuesses += 2;
-}
-  
+}  
 
 var rangeInputBoxes = document.querySelector('.input-boxes');
+var challengerInputBoxes = document.querySelector('.no-letters');
 
 rangeInputBoxes.addEventListener('keydown', validateRange);
+challengerInputBoxes.addEventListener('keydown', validateRange);
 
 function validateRange(e) {
-  console.log(typeof e.key);
-  var regex = /[\b0-9]/;
-  if (e.key === 'Backspace') {
-    console.log('BACK');
-  }
+  var regex = /[\t\n\b0-9]/;
 
   if (e.key === 'Backspace' || regex.test(e.key)) {
 
@@ -249,7 +254,6 @@ function startTimer () {
 }
 
 // End Timer
-var endTime = 0;
 function endTimer () {
   var endTime = Date.now();
   var totalTime = (endTime - startTime) / 1000;
@@ -292,6 +296,6 @@ function displayCard(winner) {
   
 function deleteCard(e) {
   if (e.target.classList.contains('delete-button')) {
-    console.log('test');
+    e.target.parentElement.parentElement.parentElement.remove();
   }
 }
