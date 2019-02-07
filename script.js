@@ -82,8 +82,7 @@ function newGame(){
 function randomNumber(min, max) {
   min = parseInt(min);
   max = parseInt(max);
-  var random = Math.floor(Math.random() * (max - min + 1)) + min;
-  return random;
+  return = Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
 function minMaxError(minMax, visibleHidden) {
@@ -122,8 +121,10 @@ function updateRandomNumber() {
     minRange -= 10;
     document.getElementById('min-number').innerText = minRange;
     document.getElementById('max-number').innerText = maxRange;
-    random = randomNumber(minRange, maxRange);
-    console.log(random);
+    generatedRandomNumber = randomNumber(1,100);
+    console.log(generatedRandomNumber);
+    // random = randomNumber(minRange, maxRange);
+    // console.log(random);
   } else {
     updateBtn();
   }
@@ -170,7 +171,7 @@ function challengersGuesses(challengerGuess, guessPlaceholder) {
   if (!challengerGuess) {
     guessPlaceholder.innerText = '--';
   } else if (challengerGuess < minNumber || challengerGuess > maxNumber) {
-    alert('Nope, that is outside of the range');
+    alert('You\'r guess is out of range');
   } else {
     guessPlaceholder.innerText = challengerGuess;
   }

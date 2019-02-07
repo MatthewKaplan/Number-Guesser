@@ -18,7 +18,6 @@ h3,
 .latest-score {
   color: #6E6E6E;
   margin-top: 0;
-/*  margin-bottom: 5px;*/
 }
 
 content {
@@ -28,7 +27,8 @@ content {
 p.bold {
   font-weight: bold;
 }
-input{
+
+input {
   border:1px solid lightgray;
   width:80%;
 }
@@ -62,7 +62,7 @@ header {
 
 .title hr {
   margin:5px 5px;
-  width: 9%;
+  width: 4%;
   display: inline-block;
 }
 
@@ -91,11 +91,8 @@ main {
 }
 
 input {
-  width: 85%;
+  width: 90%;
   height: 25px;
-/*   margin-right: 10px; */
-/*  width: 100%;*/
-
 }
 
 input:focus {
@@ -120,7 +117,8 @@ textarea:focus {
   justify-content: flex-start;
   width: 100%;
 }
-.range-buttons{
+
+.range-buttons {
   width: 70%;
 }
 
@@ -167,7 +165,7 @@ textarea:focus {
 
 #challenger-name1,
 #challenger-name2 {
-  width: 90%;
+  width: 103%;
 }
 
 #challenger1-latest-guess,
@@ -235,12 +233,6 @@ button {
 button:active {
   background-color: #6E6E6E;
 }
-
-
-:disabled {
-  background-color: #D0D2D3
-}
-
 
 button:hover {
   background-color: #DD1972;
@@ -358,177 +350,196 @@ hr {
 }
 
 .delete-button {
-    background: #6e6e6e;
-    border-radius: 50%;
-    color: lightgrey;
-    font-weight: 500;
-    height: 23px;
-    width: 23px;
+  background: #6e6e6e;
+  border-radius: 50%;
+  color: lightgrey;
+  font-weight: 500;
+  height: 23px;
+  width: 23px;
 }
 
 .footer-flex {
   display: flex;
 }
+
 button:focus{
   outline: none;
 }
 /*--------Media Queries---------*/
 
-@media screen and (max-width: 1024px){
-.challengers{
-  display: flex;
-  flex-direction: column;
-}
+@media screen and (max-width: 1024px) {
 
-.src-buttons{
-  margin: 0;
-}
-input{
-  width: 100%;
-}
-#challenger-name1,
-#challenger-name2{
-  width:100%;
-}
-.challenger-input{
-  display: block;
-}
+  .title hr {
+      width: 10%;
+    }
 
-.set-range,
-.user-guess,
-.challenger-guesses{
-  height: auto;
-  display: block;
-}
+  .challengers {
+    display: flex;
+    flex-direction: column;
+  }
 
-#submit-button,
-#reset-button,
-#clear-button{
-  width: 100%;
-  margin-left: 0;
-  margin-top: 5px;
-}
+  .src-buttons {
+    margin: 0;
+  }
 
-#button-div{
-  display: flex;
-  flex-direction: column;
-}
+  input {
+    width: 100%;
+  }
 
-.article-input{
-  display: block;
-  align-items: center;
-}
+  #challenger-name1,
+  #challenger-name2 {
+    width:100%;
+  }
 
-.input-boxes{
-  display: block;
-}
-.user-input{
-  display: block;
-  width: 100%
-}
-.left-column{
-  height: 100%;
-}
-.right-column{
-  height: 100vh;
-}
-/*#challenger1-latest-guess{
-  margin-bottom: 30px;
-}
-#challenger2-latest-guess{
-  border-left: none;
-  border-top: 1px solid lightgrey;
-}*/
-.challenger-name {
-  width:100%;
-}
-.header-title{
-  font-size: 3em;
-}
-#subtitle{
-  font-size: .75em;
-}
+  .challenger-input {
+    display: block;
+  }
 
-input {
-  width: 100%;
-}
+  .set-range,
+  .user-guess,
+  .challenger-guesses {
+    height: auto;
+    display: block;
+  }
 
-#challenger2-latest-guess{
-  border-left: none;
-  border-top: 1px solid lightgrey;
-}
-#challenger1-latest-guess{
-  margin-bottom: 30px;
-}
-/*.left-column{
-  height: 100%;
-}*/
+  #submit-button,
+  #reset-button,
+  #clear-button {
+    width: 100%;
+    margin-left: 0;
+    margin-top: 5px;
+  }
 
-} 
-.range-buttons{
-  width: 100%;
-}
-p.current-guess-title{
-  margin-bottom: 0;
-}
+  #button-div {
+    display: flex;
+    flex-direction: column;
+  }
 
-@media screen and (max-width: 768px){
+  .article-input {
+    display: block;
+    align-items: center;
+  }
+
+  .input-boxes {
+    display: block;
+  }
+
+  .user-input {
+    display: block;
+    width: 100%
+  }
+
+  .left-column {
+    height: 100%;
+  }
+
+  .right-column {
+    height: 135vh;
+  }
+
+  .challenger-name {
+    width:100%;
+  }
+
+  .header-title {
+    font-size: 3em;
+  }
+
+  #subtitle { 
+    font-size: .75em;
+  }
+
+  input {
+    width: 100%;
+  }
+
+  #challenger2-latest-guess {
+    border-left: none;
+    border-top: 1px solid lightgrey;
+  }
+
+  #challenger1-latest-guess {
+    margin-bottom: 30px;
+  }
+
+ 
+  .range-buttons{
+    width: 100%;
+  }
   p.current-guess-title{
-  margin-bottom: 0;
-}
+    margin-bottom: 0;
+  }
 
-.user-guess{
-  margin-top: 0;
-  margin-bottom: 0;
-}
-.right-column{
-  height:100%;
-}
+  @media screen and (max-width: 768px) {
 
-} 
-@media screen and (max-width: 600px){
+    .title hr {
+      width: 14%;
+    }
 
-button{
-  height: 38px;
-  width: auto;
-  margin:5px;
-}
-.content{
-  width: 50%;
-}
+      p.current-guess-title {
+      margin-bottom: 0;
+    }
 
-.set-range,
-.user-guess,
-.challenger-guesses{
-  height: 100%;
-  display: block;
-}
-.input-boxes{
-  display: block;
-}
-input{
-  line-height: auto;
-}
-aside{
-  width: 100%;
-  height: 100%;
-}
-.content{
-  width: 100%;
-}
+    .user-guess {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
 
-.main-flex{
-  display: block;
-}
-#challenger1-latest-guess{
-  margin-bottom: 30px;
-}
-.header-title{
-  font-size: 2.2em;
-}
+    .right-column {
+      height:100%;
+    }
+  }
+  @media screen and (max-width: 600px) {
 
-/*#challenger2-latest-guess{
-  border-left: none;
-  border-top: 1px solid lightgrey;
-}*/
+    button {
+      height: 38px;
+      width: auto;
+      margin:5px;
+    }
+
+    .content {
+      width: 50%;
+    }
+
+    .title hr {
+      width: 16%;
+    }
+
+    .set-range,
+    .user-guess,
+    .challenger-guesses {
+      height: 100%;
+      display: block;
+    }
+
+    .input-boxes {
+      display: block;
+    }
+
+    input {
+      line-height: auto;
+    }
+
+    aside {
+      width: 100%;
+      height: 100%;
+    }
+
+    .content {
+      width: 100%;
+    }
+
+    .main-flex {
+      display: block;
+    }
+
+    #challenger1-latest-guess {
+      margin-bottom: 30px;
+    }
+
+    .header-title {
+      font-size: 2.2em;
+    }
+
+  }
 }
