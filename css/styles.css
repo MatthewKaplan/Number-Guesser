@@ -79,7 +79,7 @@ header {
 .challenger2-name,
 .challenger1-name {
   font-weight: bold;
-  text-transform: uppercase;
+  margin-top: -5px;
 }
 
 main {
@@ -91,8 +91,11 @@ main {
 }
 
 input {
-  margin-right: 10px;
+  width: 85%;
+  height: 25px;
+/*   margin-right: 10px; */
 /*  width: 100%;*/
+
 }
 
 input:focus {
@@ -122,12 +125,19 @@ textarea:focus {
 }
 
 #update-button {
-  width: 30%;
+  width: 33%;
+  margin-top: 22px;
+/*   width: 30%; */
+
 }
 
 .input-boxes {
   display: flex;
   justify-content: space-between;
+}
+
+.input-title {
+  margin-bottom: 5px;
 }
 
 .range-flex {
@@ -226,12 +236,23 @@ button:active {
   background-color: #6E6E6E;
 }
 
+
 :disabled {
   background-color: #D0D2D3
 }
 
+
 button:hover {
   background-color: #DD1972;
+}
+
+.disabled {
+  background-color: #D0D2D3;
+  cursor: default;
+}
+
+.disabled:hover {
+  background-color: #D0D2D3;
 }
 
 .src-buttons {
@@ -251,17 +272,15 @@ button:hover {
 
 .current-guess {
   color: #DD1972;
-  font-size: 2.8em;
+  font-size: 5em;
   font-weight: bold;
   margin:0;
 }
 
-p#ch1-feedback-message {
-  font-size: 1.5em;
-}
-
+p#ch1-feedback-message,
 p#ch2-feedback-message {
   font-size: 1.5em;
+  font-weight: 300;
 }
 
 /*--------Error Messages--------*/
@@ -320,12 +339,10 @@ p#winner-name {
 
 .card-body {
   justify-content: center;
-/*  display: flex;*/
-/*  flex-direction: column;*/
 }
 
-.guesses {
-  margin-left: 7px;
+.footer-flex p {
+  margin-left: 6px;
 }
 
 hr {
@@ -341,11 +358,12 @@ hr {
 }
 
 .delete-button {
+    background: #6e6e6e;
+    border-radius: 50%;
+    color: lightgrey;
+    font-weight: 500;
     height: 23px;
     width: 23px;
-    background: #6e6e6e;
-    color: lightgrey;
-    border-radius: 50%;
 }
 
 .footer-flex {
@@ -355,6 +373,7 @@ button:focus{
   outline: none;
 }
 /*--------Media Queries---------*/
+
 @media screen and (max-width: 1024px){
 .challengers{
   display: flex;
@@ -429,6 +448,11 @@ input{
 #subtitle{
   font-size: .75em;
 }
+
+input {
+  width: 100%;
+}
+
 #challenger2-latest-guess{
   border-left: none;
   border-top: 1px solid lightgrey;
@@ -439,6 +463,7 @@ input{
 /*.left-column{
   height: 100%;
 }*/
+
 } 
 .range-buttons{
   width: 100%;
