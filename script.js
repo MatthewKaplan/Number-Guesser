@@ -227,7 +227,7 @@ function updateWinnerName(){
 
 // Guess Counter 
 var totalGuesses = 0;
-function guessCounter () {
+function guessCounter (){
   totalGuesses += 2;
 }  
 
@@ -298,4 +298,4 @@ function deleteCard(e) {
   if (e.target.classList.contains('delete-button')) {
     e.target.parentElement.parentElement.parentElement.remove();
   }
-};
+}
