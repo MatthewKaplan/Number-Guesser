@@ -27,12 +27,12 @@
           <h3>Set Range</h3>
           <article class="input-boxes">
             <div class="user-input">
-              <p>Min Range</p>
+              <p class="input-title">Min Range</p>
               <input type="" name="user_range" id="min-range-set" class="left-column-input"><br>
               <span class="error" id="min-range-error"><i class="fas fa-exclamation-triangle"></i>Enter a min range</span>
             </div>
             <div class="user-input">
-              <p>Max Range</p>
+              <p class="input-title">Max Range</p>
               <input type="" name="user_range" id="max-range-set" class="left-column-input"><br>
               <span class="error" id="max-range-error"><i class="fas fa-exclamation-triangle"></i>Enter a max range</span>
             </div>
@@ -48,12 +48,12 @@
             <h3>Challenger 1</h3>
             <article class="challenger-input">
               <div class="challenger-name">
-                <p>Name</p>
+                <p class="input-title">Name</p>
                 <input type="username" name="user_name" id="challenger-name1"><br>
                 <span class="error" id="challenger1-name-error"><i class="fas fa-exclamation-triangle"></i>Enter a name </span>
               </div>
               <div class="user-input">
-                <p>Guess</p>
+                <p class="input-title">Guess</p>
                 <input type="" name="user_guess" id="challenger-guess1"><br>
                 <span class="error no-letters" id="challenger1-guess-error"><i class="fas fa-exclamation-triangle"></i>Enter a guess</span>
               </div>
@@ -62,18 +62,18 @@
             <h3>Challenger 2</h3>
             <article class="challenger-input">
               <div class="challenger-name">
-                <p>Name</p>
+                <p class="input-title">Name</p>
                 <input type="username" name="user_name" id="challenger-name2"><br>
                 <span class="error" id="challenger2-name-error"><i class="fas fa-exclamation-triangle"></i>Enter a name</span>
               </div>
               <div class="user-input">
-                <p>Guess</p>
+                <p class="input-title">Guess</p>
                 <input type="" name="user_guess" id="challenger-guess2"><br>
                 <span class="error no-letters" id="challenger2-guess-error"><i class="fas fa-exclamation-triangle"></i>Enter a guess</span>
               </div>
             </article>
 
-            <article class="src-buttons">
+            <article class="src-buttons button-row">
               <div id="button-div">
                 <button id="submit-button">submit guess</button>
                 <button id="reset-button">reset game</button>
@@ -87,7 +87,7 @@
           <div id="challenger1-latest-guess">
             <span class="latest-score">Latest Score</span><br>
             <p class="challenger1-name">Challenger 1 Name</p>
-            <p>Current Guess</p>
+            <p>current guess</p>
             <p class="current-guess" id="ch1-guess">97</p>
             <p id="ch1-feedback-message">that's too high</p>
           </div>
@@ -95,7 +95,7 @@
           <div id="challenger2-latest-guess">
             <span class="hide-me"> placeholder </span><br>
             <p class="challenger2-name">Challenger 2 Name</p>
-            <p>Current Guess</p>
+            <p>current guess</p>
             <p class="current-guess" id="ch2-guess">3</p>
             <p id="ch2-feedback-message">that's too low</p>
           </div>

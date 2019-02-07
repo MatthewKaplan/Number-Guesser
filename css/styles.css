@@ -75,7 +75,7 @@ header {
 .challenger2-name,
 .challenger1-name {
   font-weight: bold;
-  text-transform: uppercase;
+  margin-top: -5px;
 }
 
 main {
@@ -87,8 +87,8 @@ main {
 }
 
 input {
-  margin-right: 10px;
-  width: 100%;
+  width: 85%;
+  height: 25px;
 }
 
 input:focus {
@@ -116,11 +116,16 @@ textarea:focus {
 
 #update-button {
   width: 33%;
+  margin-top: 22px;
 }
 
 .input-boxes {
   display: flex;
   justify-content: space-between;
+}
+
+.input-title {
+  margin-bottom: 5px;
 }
 
 .range-flex {
@@ -219,12 +224,17 @@ button:active {
   background-color: #6E6E6E;
 }
 
-button:disabled {
-  background-color: #D0D2D3
-}
-
 button:hover {
   background-color: #DD1972;
+}
+
+.disabled {
+  background-color: #D0D2D3;
+  cursor: default;
+}
+
+.disabled:hover {
+  background-color: #D0D2D3;
 }
 
 .src-buttons {
@@ -244,17 +254,15 @@ button:hover {
 
 .current-guess {
   color: #DD1972;
-  font-size: 2.8em;
+  font-size: 5em;
   font-weight: bold;
   margin:0;
 }
 
-p#ch1-feedback-message {
-  font-size: 1.5em;
-}
-
+p#ch1-feedback-message,
 p#ch2-feedback-message {
   font-size: 1.5em;
+  font-weight: 300;
 }
 
 /*--------Error Messages--------*/
@@ -313,12 +321,10 @@ p#winner-name {
 
 .card-body {
   justify-content: center;
-/*  display: flex;*/
-/*  flex-direction: column;*/
 }
 
-.guesses {
-  margin-left: 7px;
+.footer-flex p {
+  margin-left: 6px;
 }
 
 hr {
@@ -334,11 +340,12 @@ hr {
 }
 
 .delete-button {
+    background: #6e6e6e;
+    border-radius: 50%;
+    color: lightgrey;
+    font-weight: 500;
     height: 23px;
     width: 23px;
-    background: #6e6e6e;
-    color: lightgrey;
-    border-radius: 50%;
 }
 
 .footer-flex {
@@ -359,7 +366,6 @@ button{
 input{
   line-height: auto;
 }*/
-}
 @media screen and (max-width: 600px){
 .challengers{
   display: flex;
@@ -428,5 +434,9 @@ aside{
 }
 #subtitle{
   font-size: .75em;
+}
+
+input {
+  width: 100%;
 }
 } 
